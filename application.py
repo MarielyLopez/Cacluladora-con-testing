@@ -22,22 +22,22 @@ def print_menu():
     print "Enter number 5 if you want exit."
 
 
-def ingreso_de_respuestas():
-    respuesta_uno = insert_number()
-    respuesta_dos = insert_number()
+def enter_of_answers():
+    answer_one = insert_number()
+    answer_two = insert_number()
     print "The answer is:"
-    return respuesta_uno, respuesta_dos
+    return answer_one, answer_two
 
 
 def insert_number():
     while True:
-        answer = raw_input("Ingrese un numero: ")
+        answer = raw_input("Enter a number: ")
         try:
             answer = int(answer)
             return answer
             break
         except Exception:
-            print "Intenta nuevamente"
+            print "Try again."
 
 
 def question_y_n():
@@ -46,7 +46,7 @@ def question_y_n():
         user_answer = raw_input("Do you want make other operation? y / n: ")
         if user_answer == "y" or user_answer == "yes":
             menu_general()
-        elif user_answer == "n" or user_answer == "no":
+        elif user_answer == "n" or user_answer == "not":
             print " We hope have helped."
             sys.exit(1)
         else:
@@ -59,19 +59,19 @@ def answer_menu():
     while answermenu == True:
         if answer == 1:
             print "Go we sum! XD"
-            print str(suma(ingreso_de_respuestas()))
+            print str(sum(enter_of_answers()))
             question_y_n()
         elif answer == 2:
             print "Go we subtract! XD"
-            print str(resta(ingreso_de_respuestas()))
+            print str(subtract(enter_of_answers()))
             question_y_n()
         elif answer == 3:
             print "Go we multiply! XD"
-            print str(multiply(ingreso_de_respuestas()))
+            print str(multiply(enter_of_answers()))
             question_y_n()
         elif answer == 4:
             print "Go we divide! XD"
-            print str(divide(ingreso_de_respuestas()))
+            print str(divide(enter_of_answers()))
             question_y_n()
         elif answer == 5:
             print "We hope have helped."
@@ -79,10 +79,10 @@ def answer_menu():
         else:
             menu_general()
 
-def suma(numbers):
+def sum(numbers):
     return numbers[0] + numbers[1]
 
-def resta(numbers):
+def subtract(numbers):
     return numbers[0] - numbers[1]
 
 def multiply(numbers):
